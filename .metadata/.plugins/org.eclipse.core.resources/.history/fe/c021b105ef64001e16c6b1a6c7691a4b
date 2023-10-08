@@ -1,0 +1,9 @@
+package com.pksoftware.service;
+
+import com.pksoftware.entity.Cunsumer;
+
+public interface ConsumerService {
+
+		Cunsumer insert(Cunsumer cunsumer);
+		
+}

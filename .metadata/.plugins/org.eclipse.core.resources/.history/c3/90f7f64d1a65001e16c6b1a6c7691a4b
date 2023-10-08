@@ -1,0 +1,10 @@
+package com.pksoftware.dao;
+
+import java.util.List;
+
+import com.pksoftware.entity.Bank;
+
+public interface BankService {
+
+	
+}

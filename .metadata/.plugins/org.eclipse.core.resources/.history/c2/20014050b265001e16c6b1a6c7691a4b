@@ -1,0 +1,9 @@
+package com.pksoftware.feignservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(url="http://localhost:9592", value="cunsumer")
+public interface CunsumerFeignClient {
+
+		public com.pksoftware.entity.Cunsumer
+}

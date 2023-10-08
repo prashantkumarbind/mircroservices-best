@@ -1,0 +1,60 @@
+package com.pksoftware.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.pksoftware.entity.Bank;
+import com.pksoftware.service.BankService;
+
+@Controller
+public class BankController {
+
+	
+
+	@Autowired
+	BankService service;
+	
+
+	@ResponseBody
+	@GetMapping("/testing/{name}")
+	public String testing(@PathVariable String name) {
+		   return name;
+	}
+	
+	@ResponseBody
+	@PostMapping("/bank")
+	public Bank insertData(@RequestBody Bank bank){
+		   Bank bank2 = service.insert(bank);
+		   return bank2;
+	}
+	
+	@ResponseBody
+	@GetMapping("/bank")
+	public List<Bank> selectAll(){
+		   List<Bank> list = service.select();
+		   return list;
+	}
+	
+	@ResponseBody
+	@PutMapping("/bank")
+	public Bank update(@RequestBody Bank bank) {
+		   Bank bank2 = service.update(bank);
+		   return bank2;
+	}
+	
+	@ResponseBody
+	@DeleteMapping("/bank")
+	public String deleteData(int id) {
+		   String message = service.delte(id);
+		   return message;
+	}
+}

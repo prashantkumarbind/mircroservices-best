@@ -1,0 +1,48 @@
+package com.pksoftware.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.pksoftware.dao.ConsumerDao;
+import com.pksoftware.entity.Cunsumer;
+import com.pksoftware.service.ConsumerService;
+
+@Component
+public class CunsumerServiceImpl implements ConsumerService{
+
+	@Autowired
+	ConsumerDao consumerDao;
+	
+	@Override
+	public Cunsumer insert(Cunsumer cunsumer) {
+		   Cunsumer cunsumer2 = consuberDao.save(cunsumer)
+		return null;
+	}
+
+	@Override
+	public List<Cunsumer> select() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cunsumer update(Cunsumer cunsumer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(String accountNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cunsumer getByAccountNumber(String accountNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,40 @@
+package com.pksoftware.entity;
+
+
+public class Manage {
+
+	Bank bank;
+	Cunsumer cunsumer;
+	Shop shop;
+	
+	
+	public Bank getBank() {
+		return bank;
+	}
+	public void setBank(Bank bank) {
+		this.bank = bank;
+	}
+	public Cunsumer getCunsumer() {
+		return cunsumer;
+	}
+	public void setCunsumer(Cunsumer cunsumer) {
+		this.cunsumer = cunsumer;
+	}
+	public Shop getShop() {
+		return shop;
+	}
+	public void setShop(Shop shop) {
+		this.shop = shop;
+	}
+	public String toString() {
+		
+		  return "\n **Manage** \n Bank::"+bank+"\n Shop::"+shop+"\n Cunsumer::"+cunsumer;
+	}
+	
+	public void setBank(Bank bank[]) {
+			int no = bank.length;
+		 	Bank[] bank2 = new Bank[no];
+		 	for(Bank b : bank2)
+		 		System.out.println(b);
+	}
+}

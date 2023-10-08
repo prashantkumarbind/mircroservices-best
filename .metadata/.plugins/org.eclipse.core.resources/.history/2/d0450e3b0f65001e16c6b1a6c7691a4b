@@ -1,0 +1,33 @@
+package com.pksoftware.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.pksoftware.entity.Cunsumer;
+import com.pksoftware.service.ConsumerService;
+
+
+@Controller
+public class ConsumerController {
+
+		@Autowired
+		ConsumerService consumerService;
+	
+		@ResponseBody
+		@GetMapping("/testing/{name}")
+		public String getName(@PathVariable String name) {
+			   return name;
+		}
+		
+		@ResponseBody
+		@PostMapping("/cunsumer")
+		public Cunsumer insertValue(@RequestBody Cunsumer cunsumer) {
+			   Cunsumer cunsumer2 = consumerService.insert(cunsumer);
+			   return cunsumer2;
+		}
+}

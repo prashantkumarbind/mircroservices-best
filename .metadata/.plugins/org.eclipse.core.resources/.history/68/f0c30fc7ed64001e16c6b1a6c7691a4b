@@ -1,0 +1,6 @@
+package com.pksoftware.service;
+
+
+public interface ConsumerService {
+
+}

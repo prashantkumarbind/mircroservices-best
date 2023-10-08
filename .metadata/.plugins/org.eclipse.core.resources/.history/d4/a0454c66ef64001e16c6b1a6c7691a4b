@@ -1,0 +1,43 @@
+package com.pksoftware.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.pksoftware.entity.Cunsumer;
+import com.pksoftware.service.ConsumerService;
+
+@Component
+public class CunsumerServiceImpl implements ConsumerService{
+
+	@Override
+	public Cunsumer insert(Cunsumer cunsumer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cunsumer> select() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cunsumer update(Cunsumer cunsumer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String delete(String accountNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Cunsumer getByAccountNumber(String accountNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

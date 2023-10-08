@@ -1,0 +1,32 @@
+package com.pksoftware.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.pksoftware.entity.Bank;
+import com.pksoftware.service.BankService;
+
+@Controller
+public record BankController() {
+
+	
+			@Autowired
+			BankService bankService;
+	
+			@ResponseBody
+			@GetMapping("/testing/{name}")
+			public String testing(@PathVariable String name) {
+				   return name;
+			}
+			
+			@ResponseBody
+			@PostMapping("/bank")
+			public Bank insertData(@RequestBody Bank bank){
+				   Bank bank2 = 
+			}
+}

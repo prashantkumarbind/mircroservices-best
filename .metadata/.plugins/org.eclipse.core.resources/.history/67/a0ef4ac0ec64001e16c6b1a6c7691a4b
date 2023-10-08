@@ -1,0 +1,19 @@
+package com.pksoftware.entity;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Cunsumer {
+
+		private String name;
+		private String address;
+		private String accountNo;
+		private String gender;
+		private float  amount;
+		private String mobileNo;
+		private int age;
+		private String purchegeDate;
+		private String purchegeAmount;
+		
+		
+}

@@ -1,0 +1,16 @@
+package com.pksoftware.feignservice;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+import com.pksoftware.entity.Shop;
+
+
+@FeignClient(url="http://localhost:9591", value="shop")
+public interface ShopFeignClient {
+	
+		public Shop getShopDataById(int id);
+		public List<Shop> getAllData();
+
+}

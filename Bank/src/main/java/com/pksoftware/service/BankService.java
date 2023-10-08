@@ -1,0 +1,13 @@
+package com.pksoftware.service;
+
+import java.util.List;
+import com.pksoftware.entity.Bank;
+
+public interface BankService {
+
+	Bank insert(Bank bank);
+	List<Bank> select();
+	Bank update(Bank bank);
+	String delte(int id);
+	Bank findByIdValue(int id);
+}

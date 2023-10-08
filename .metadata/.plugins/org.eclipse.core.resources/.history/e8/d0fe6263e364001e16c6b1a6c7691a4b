@@ -1,0 +1,55 @@
+package com.pksoftware.serviceimpl;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.pksoftware.dao.ShopDao;
+import com.pksoftware.entity.Shop;
+import com.pksoftware.service.ShopService;
+
+@Component
+public class ShopServiceImpl implements ShopService{
+
+	@Autowired
+	ShopDao shopDao;
+	
+	@Override
+	public Shop insert(Shop shop) {
+		Shop shopObj = shopDao.save(shop);
+		return shopObj;
+	}
+
+	@Override
+	public List<Shop> select() {
+		List<Shop> list = shopDao.findAll();
+		return list;
+	}
+
+	@Override
+	public Shop update(Shop shop) {
+		Shop shopObj = null;
+		Optional<Shop> opt = shopDao.findById(shop.getShopId());
+		if(opt.isPresent())
+		{
+			shopObj= opt.get();
+		}
+		return shopObj;
+	}
+
+	@Override
+	public String delete(int id) {
+			String message ="Not found  ???????????????????";
+		   Optional<Shop> opt = shopDao.findById(id);
+		   if(opt.isPresent())
+		   {
+			     shopDao.deleteById(id);
+			     message="";
+		   }
+		   return ;
+	}
+
+		
+}

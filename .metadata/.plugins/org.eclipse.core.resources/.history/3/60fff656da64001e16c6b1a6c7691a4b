@@ -1,0 +1,5 @@
+package com.pksoftware.service;
+
+public interface ShopService {
+
+}

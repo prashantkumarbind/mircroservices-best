@@ -1,0 +1,19 @@
+package com.pksoftware.feignservice;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
+
+import com.pksoftware.entity.Bank;
+
+@FeignClient(url="http://localhost:9593", value="bank")
+public interface BankFeignClient {
+
+	
+		@Component("/bank/{id}")
+		public Bank getBankDataById(int id);
+		
+		public List<Bank> getBankAllData();
+		
+}

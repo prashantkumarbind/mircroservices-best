@@ -1,0 +1,9 @@
+package com.pksoftware.feignservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient("http://localhost:")
+public interface BankFeignClient {
+
+		
+}

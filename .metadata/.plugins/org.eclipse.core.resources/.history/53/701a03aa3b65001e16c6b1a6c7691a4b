@@ -1,0 +1,15 @@
+package com.pksoftware.entity;
+
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+public class Bank {
+
+	private String name;
+	private String address;
+	private int pin;
+	private String mobile;
+	private String gender;
+	private int age;
+}

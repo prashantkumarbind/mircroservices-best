@@ -1,0 +1,5 @@
+package com.pksoftware.serviceimpl;
+
+public class CunsumerServiceImpl {
+
+}

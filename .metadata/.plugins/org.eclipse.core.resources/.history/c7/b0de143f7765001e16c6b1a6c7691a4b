@@ -1,0 +1,27 @@
+package com.pksoftware.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+import com.pksoftware.entity.Manage;
+import com.pksoftware.service.ManageService;
+
+@Component
+public class ManageServiceImpl implements ManageService{
+
+	@Override
+	public Manage selectById(int id) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Manage> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+		
+}

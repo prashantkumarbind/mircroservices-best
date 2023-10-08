@@ -1,0 +1,12 @@
+package com.pksoftware.feignservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+import com.pksoftware.entity.Bank;
+
+@FeignClient(url="http://localhost:9593", value="bank")
+public interface BankFeignClient {
+
+		
+		public Bank getBankDataById(int id);
+}

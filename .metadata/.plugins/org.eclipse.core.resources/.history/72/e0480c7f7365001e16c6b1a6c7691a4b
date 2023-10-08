@@ -1,0 +1,11 @@
+package com.pksoftware.entity;
+
+
+public class Manage {
+
+	Bank bank;
+	Cunsumer cunsumer;
+	Shop shop;
+	
+	
+}

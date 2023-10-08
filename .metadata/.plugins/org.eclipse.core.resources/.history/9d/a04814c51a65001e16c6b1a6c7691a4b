@@ -1,0 +1,5 @@
+package com.pksoftware.dao;
+
+public interface BankDao {
+
+}

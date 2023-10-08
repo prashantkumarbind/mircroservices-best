@@ -1,0 +1,5 @@
+package com.pksoftware.feignservice;
+
+public interface ManageFeignClient {
+
+}

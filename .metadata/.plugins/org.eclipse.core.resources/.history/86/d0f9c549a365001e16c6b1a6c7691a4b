@@ -1,0 +1,57 @@
+package com.pksoftware.serviceimpl;
+
+import java.util.ArrayList;
+import org.springframework.aot.hint.TypeReference;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+import com.pksoftware.entity.Bank;
+import com.pksoftware.entity.Cunsumer;
+import com.pksoftware.entity.Manage;
+import com.pksoftware.entity.Shop;
+import com.pksoftware.service.ManageService;
+
+@Component
+public class ManageServiceImpl implements ManageService{
+
+	@Autowired
+	RestTemplate restTemplate;
+	
+	Manage manage;
+	
+	@Override
+	public Manage selectById(int id) {
+			
+			ResponseEntity<Bank> bank = restTemplate.exchange("http://localhost:9593/bank/"+id, HttpMethod.GET, null, Bank.class);
+			ResponseEntity<Shop> shop = restTemplate.exchange("http://localhost:9591/shop/"+id, HttpMethod.GET, null, Shop.class);
+			ResponseEntity<Cunsumer> cunsumer = restTemplate.exchange("http://localhost:9592/cunsumer/"+id, HttpMethod.GET, null, Cunsumer.class);
+			manage = new Manage();
+			manage.setBank(bank.getBody());
+			manage.setCunsumer(cunsumer.getBody());
+			manage.setShop(shop.getBody());
+			return manage;
+	}
+
+	@Override
+	public List<Bank> selectAll() {
+			ResponseEntity<List<Bank>> bank = restTemplate.exchange("http://localhost:9593/bank", HttpMethod.GET, null, new ParameterizedTypeReference<List<Bank>>() {}); 
+			List<Bank> bb = bank.getBody();
+			return bb;
+	}
+
+	@Override
+	public List<Manage> getAllConcept() {
+		ResponseEntity<List<Bank>> bank = restTemplate.exchange("http://localhost:9593/bank", HttpMethod.GET, null, new ParameterizedTypeReference<List<Bank>>() {});
+		ResponseEntity<List<Cunsumer>> cunsumer = restTemplate.exchange("http://localhost:9593/bank", HttpMethod.GET, null, new ParameterizedTypeReference<List<Cunsumer>>() {});
+		ResponseEntity<List<Shop>> shop = restTemplate.exchange("http://localhost:9593/bank", HttpMethod.GET, null, new ParameterizedTypeReference<List<Shop>>() {});
+		
+			return null;
+	}
+
+		
+}
